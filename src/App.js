@@ -1,31 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Footer, Header } from "./containers";
 import { Navbar } from "./components";
+import video from "./assets/warsztaty_1.mp4";
+import video2 from "./assets/warsztaty_2.mp4";
 import "./App.css";
+import LoginPage from "./pages/LoginPage";
+import Home from "./pages/Home";
 
-const App = () => {
+function App() {
   return (
-    <div className="App">
-      <div className="video_bg">
-        <div className="header-bg_video">
-          <video muted="muted" autoplay="autoplay" loop="loop" playsinline>
-            <source
-              src="https://booksy-public.s3.amazonaws.com/Horizontal_PL_1.webm"
-              type="video/webm"
-            />
-            <source
-              src="https://booksy-public.s3.amazonaws.com/PL.mp4"
-              type="video/webm"
-            />
-          </video>
-        </div>
-        <Navbar />
-        <Header />
-      </div>
-
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/Workshops" />
+        <Route path="/SingleWorkshop" />
+        <Route path="/SingleWorkshop" />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;

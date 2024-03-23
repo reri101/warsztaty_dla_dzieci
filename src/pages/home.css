@@ -1,0 +1,27 @@
+.video_bg {
+  background-color: rgba(27, 29, 33, 0.4);
+  position: relative;
+  height: 500px;
+}
+
+.header-bg_video {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 0;
+  overflow: hidden;
+
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-image: url(https://dk2h3gy4kn9jw.cloudfront.net/web-2019/51911eb5/img/header-bg-pl.88f9dab.jpg);
+  z-index: -1;
+}
+
+.header-bg_video video {
+  filter: brightness(40%);
+  position: absolute;
+  background-size: cover;
+  width: 100%;
+}
