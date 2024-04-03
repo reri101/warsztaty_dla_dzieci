@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Footer, Header } from "../containers";
-import { Navbar } from "../components";
-import video from "../assets/warsztaty_1.mp4";
-import video2 from "../assets/warsztaty_2.mp4";
+import { Footer, Header, PopularProducts, Slider } from "../../containers";
+import { Navbar } from "../../components";
+import video from "../../assets/warsztaty_1.mp4";
+import video2 from "../../assets/kids_workshop_background.jpg";
 import "./home.css";
 export default function Home() {
   const [currentVideo, setCurrentVideo] = useState(video2);
@@ -16,9 +16,9 @@ export default function Home() {
         <div className="header-bg_video">
           <video
             muted="muted"
-            autoplay="autoplay"
+            autoPlay="autoPlay"
             loop="loop"
-            playsinline
+            playsInline
             onEnded={handleVideoEnd}
           >
             <source src={video2} type="video/mp4" />
@@ -28,6 +28,8 @@ export default function Home() {
         <Navbar />
         <Header />
       </div>
+      <Slider />
+      <PopularProducts />
 
       <Footer />
     </div>

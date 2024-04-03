@@ -25,9 +25,10 @@ const Login = () => {
       className={`login_container ${isActive ? "active" : ""}`}
       id="login_container"
     >
+      <div className="backdrop-filter-layer"></div>
       <div className="form-container sign-up">
         <form>
-          <h1>Create Account</h1>
+          <h1>Utwórz konto za pomocą:</h1>
           <div className="socials-icons">
             <a href="#" className="icon">
               <FontAwesomeIcon icon={faGooglePlusG} />
@@ -42,16 +43,17 @@ const Login = () => {
               <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
           </div>
-          <span>or use your email password</span>
-          <input type="text" placeholder="Name" />
+          <span>lub użyj danych do rejestracji</span>
+          <input type="text" placeholder="Imię i nazwisko" />
           <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button>Sign Up</button>
+          <input type="password" placeholder="Hasło" />
+          <input type="password" placeholder="Potwierdź hasło" />
+          <button>Zarejestruj się</button>
         </form>
       </div>
       <div className="form-container sign-in">
         <form>
-          <h1>Sign in</h1>
+          <h1>Logowanie za pomocą:</h1>
           <div className="socials-icons">
             <a href="#" className="icon">
               <FontAwesomeIcon icon={faGooglePlusG} />
@@ -66,33 +68,33 @@ const Login = () => {
               <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
           </div>
-          <span>or use your email for registration</span>
+          <span>lub użyj emaila i hasła</span>
           <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <a href="#">Forget Your password?</a>
-          <button>Sign In</button>
+          <input type="password" placeholder="Hasło" />
+          <a href="#">Zapomniałeś hasła?</a>
+          <button>Zaloguj się</button>
         </form>
       </div>
       <div className="toggle-container">
         <div className="toggle">
           <div className="toggle-panel toggle-sign_in">
-            <h1>Welcome Back!</h1>
-            <p>Enter your personal details to use all of site features</p>
+            <h1>Cześć!</h1>
+            <p>Jeśli posiadasz już konto, przejdź do logowania</p>
             <button className="hidden" id="login" onClick={handleLoginClick}>
-              Sign in
+              Zaloguj się
             </button>
           </div>
           <div className="toggle-panel toggle-sign_up">
-            <h1>Hello!</h1>
+            <h1>Witaj ponownie!</h1>
             <p>
-              Register with your personal details to use all of site features
+              Jeśli jednak nie posiadasz jeszcze konta przejdź do rejestracji
             </p>
             <button
               className="hidden"
               id="register"
               onClick={handleRegisterClick}
             >
-              Sign up
+              Zarejestruj się
             </button>
           </div>
         </div>

@@ -1,13 +1,14 @@
-.gpt3__header {
+.kw__header {
   display: flex;
   justify-content: center;
   background-color: #ffffff00;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 105px);
   overflow: hidden;
 }
 
-.gpt3__header-content {
+.kw__header-content {
+  width: fit-content;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -16,43 +17,79 @@
   max-width: 700px;
 }
 
-.gpt3__header-content h1 {
+.kw__header-content h1 {
   font-family: var(--font-family);
   font-weight: 800;
-  font-size: 48px;
+  font-size: var(--h1-size);
   line-height: 75px;
   color: #fff;
   letter-spacing: -0.04em;
 }
 
-.gpt3__header-content p {
+.kw__header-content p {
   font-family: var(--font-family);
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: var(--p-size);
   line-height: 27px;
 
   color: #fff;
   margin-top: 1.5rem;
 }
 
-.gpt3__header-content__input {
-  width: 100%;
+.kw__header-content__input {
+  width: 580px;
   margin: 2rem 0 1rem;
   display: flex;
+  background: #fff;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--color-foter);
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.gpt3__header-content__input input {
+.kw__header-content__input svg {
+  font-size: 20px;
+  color: #797979;
+}
+
+.kw__header-content__input input {
   flex: 2;
-  width: 100%;
-  min-height: 50px;
+  width: 90%;
   background: #fff;
   font-family: var(--font-family);
   font-size: 20px;
-  line-height: 27px;
   border: 2px solid var(--color-foter);
   padding: 0 1rem;
   outline: none;
-  color: #fff;
-  border-radius: 5px;
+  color: #000000;
+}
+
+@media screen and (max-width: 800px) {
+  .kw__header-content__input {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .kw__header-content {
+    text-align: center;
+  }
+  .kw__header-content h1 {
+    font-size: 2.5rem;
+  }
+  .kw__header-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .kw__header-content h1 {
+    font-size: 1.8rem;
+  }
+  .kw__header-content p {
+    display: none;
+  }
 }

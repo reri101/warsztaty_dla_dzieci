@@ -1,24 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
-import logo from "../../assets/logo.svg";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 
 const Menu = () => (
   <>
     <p>
-      <a href="#home">Home</a>
+      <a href="/login">Warsztaty</a>
     </p>
     <p>
-      <a href="#wgpt3">What is GPT?</a>
+      <a href="#wgpt3">Kontakt</a>
     </p>
     <p>
-      <a href="#possibility">Open AI</a>
-    </p>
-    <p>
-      <a href="#features">Case Studies</a>
-    </p>
-    <p>
-      <a href="#blog">Library</a>
+      <a href="#possibility">O nas</a>
     </p>
   </>
 );
@@ -26,21 +20,39 @@ const Menu = () => (
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
+  useEffect(() => {
+    const navbarLinksContainer = document.querySelector(".kw__navbar");
+    const navbarMenuContainer = document.querySelector(
+      ".kw__navbar-menu_container"
+    );
+
+    if (toggleMenu) {
+      navbarMenuContainer.classList.add("shifted");
+    } else {
+      navbarMenuContainer.classList.remove("shifted");
+    }
+  }, [toggleMenu]);
+
   return (
-    <div className="gpt3__navbar">
-      <div className="gpt3__navbar-links">
-        <div className="gpt3__navbar-links_logo">
-          <img src={logo} alt="logo" />
+    <div className="kw__navbar">
+      <div className="kw__navbar-links">
+        <div className="kw__navbar-links_logo">
+          {/* <img src={logo} alt="logo" /> */}
+          <h2>KreatywnyRex</h2>
         </div>
-        <div className="gpt3__navbar-links_container">
+        <div className="kw__navbar-links_container">
           <Menu />
         </div>
       </div>
-      <div className="gpt3__navbar-sign">
-        <p>Sign in</p>
-        <button type="button">Sign up</button>
+      <div className="kw__navbar-sign">
+        <Link to="/login">
+          <p>Rejestracja</p>
+        </Link>
+        <Link to="/login">
+          <button type="button">Logowanie</button>
+        </Link>
       </div>
-      <div className="gpt3__navbar-menu">
+      <div className="kw__navbar-menu">
         {toggleMenu ? (
           <RiCloseLine
             color="#fff"
@@ -54,17 +66,15 @@ const Navbar = () => {
             onClick={() => setToggleMenu(true)}
           />
         )}
-        {toggleMenu && (
-          <div className="gpt3__navbar-menu_container scale-up-center">
-            <div className="gpt3__navbar-menu_container-links">
-              <Menu />
-              <div className="gpt3__navbar-menu_container-links-sign">
-                <p>Sign in</p>
-                <button type="button">Sign up</button>
-              </div>
-            </div>
+      </div>
+      <div className="kw__navbar-menu_container">
+        <div className="kw__navbar-menu_container-links">
+          <Menu />
+          <div className="kw__navbar-menu_container-links-sign">
+            <p>Rejestracja</p>
+            <button type="button">Logowanie</button>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

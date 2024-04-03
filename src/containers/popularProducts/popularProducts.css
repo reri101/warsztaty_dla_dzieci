@@ -1,0 +1,25 @@
+.popularPrdcs {
+  font-family: var(--font-family);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popularPrdcs h2 {
+  font-size: var(--h1-size);
+  width: fit-content;
+}
+
+.popularPrdcs p {
+  font-size: var(--p-size);
+  margin: 1.5rem 0;
+}
+
+.popularPrdcs .product-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

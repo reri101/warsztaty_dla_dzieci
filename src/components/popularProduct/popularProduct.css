@@ -1,0 +1,21 @@
+.popularP {
+  margin: 1.5rem;
+  width: 300px;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+}
+
+.popularP img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.popularP h5 {
+  font-size: var(--h5-size);
+}
+
+.popularP p {
+  line-height: 15px;
+  font-size: 1rem;
+}

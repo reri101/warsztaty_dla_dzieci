@@ -5,8 +5,8 @@ import { Navbar } from "./components";
 import video from "./assets/warsztaty_1.mp4";
 import video2 from "./assets/warsztaty_2.mp4";
 import "./App.css";
-import LoginPage from "./pages/LoginPage";
-import Home from "./pages/Home";
+import LoginPage from "./pages/loginPage/LoginPage";
+import Home from "./pages/home/Home";
 
 function App() {
   return (

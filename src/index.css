@@ -5,13 +5,20 @@
   --font-family: "Manrope", sans-serif;
   --font-family2: "Montserrat", sans-serif;
 
-  --gradient-text: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  --h1-size: 3rem;
+  --h5-size: 1.8rem;
+  --p-size: 1.15rem;
+
+  --border-radius: 8px;
+
+  --gradient-text: linear-gradient(89.97deg, #cf6900 1.84%, #f49867 102.67%);
   --gradient-bar: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%);
 
   --color-bg: #040c18;
-  --color-footer: #031b34;
+  --color-footer: #2d1700;
   --color-blog: #042c54;
   --color-text: #81afdd;
   --color-subtext: #ff8a71;
   --color-subtext-2: #71e6ff;
+  --color-button: #f0a822;
 }

@@ -7,6 +7,14 @@
 
 body {
   background: var(--color-bg);
+  background-repeat: repeat;
+  background: radial-gradient(
+      circle at 30% 3%,
+      rgba(54, 35, 0, 0.9) 0%,
+      rgba(4, 12, 24, 1) 100%
+    ),
+    url(./assets/szlaczki_bg.jpg);
+  background-size: 15%;
 }
 
 a {
@@ -59,7 +67,7 @@ a {
 }
 
 .section__padding {
-  padding: 4rem 6rem;
+  padding: 4rem 5rem;
 }
 
 .section__margin {
@@ -71,36 +79,6 @@ a {
     both;
   animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
-
-/* .video_bg {
-  background-color: rgba(27, 29, 33, 0.4);
-  position: relative;
-  height: 600px;
-}
-
-.header-bg_video {
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  left: 0;
-  overflow: hidden;
-
-  height: 100%;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  background-image: url(https://dk2h3gy4kn9jw.cloudfront.net/web-2019/51911eb5/img/header-bg-pl.88f9dab.jpg);
-  z-index: -1;
-}
-
-.header-bg_video video {
-  filter: brightness(40%);
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-} */
 
 @-webkit-keyframes scale-up-center {
   0% {

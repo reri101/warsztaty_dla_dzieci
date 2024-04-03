@@ -1,40 +1,46 @@
-.gpt3__navbar {
+.kw__navbar {
+  font-family: var(--font-family);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 6rem;
+  transition: transform 0.5s ease-in-out;
 }
 
-.gpt3__navbar-links {
+.kw__navbar h2 {
+  color: #fff;
+}
+
+.kw__navbar-links {
   flex: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.gpt3__navbar-links_logo {
+.kw__navbar-links_logo {
   margin-right: 2rem;
 }
 
-.gpt3__navbar-links_logo img {
+.kw__navbar-links_logo img {
   width: 62.56px;
   height: 16.02px;
 }
 
-.gpt3__navbar-links_container {
-  display: flex;
+.kw__navbar-links_container {
+  display: none;
   flex-direction: row;
 }
 
-.gpt3__navbar-sign {
+.kw__navbar-sign {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.gpt3__navbar-links_container p,
-.gpt3__navbar-sign p,
-.gpt3__navbar-menu_container p {
+.kw__navbar-links_container p,
+.kw__navbar-sign p,
+.kw__navbar-menu_container p {
   color: #fff;
   font-family: var(--font-family);
   font-weight: 500;
@@ -45,8 +51,8 @@
   cursor: pointer;
 }
 
-.gpt3__navbar-sign button,
-.gpt3__navbar-menu_container button {
+.kw__navbar-sign button,
+.kw__navbar-menu_container button {
   padding: 0.5rem 1rem;
   color: #fff;
   font-family: var(--font-family);
@@ -54,78 +60,117 @@
   font-size: 18px;
   line-height: 25px;
 
-  background: #ff4820;
-  border-radius: 5px;
+  background: var(--gradient-text);
+  border-radius: var(--border-radius);
   border: none;
   outline: none;
   cursor: pointer;
 }
 
-.gpt3__navbar-menu {
+.kw__navbar-menu {
   margin-left: 1rem;
-  display: none;
+  display: flex;
   position: relative;
 }
 
-.gpt3__navbar-menu svg {
+.kw__navbar-menu svg {
   cursor: pointer;
 }
 
-.gpt3__navbar-menu_container {
+.kw__navbar-menu_container {
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
   flex-direction: column;
   text-align: end;
-  background: var(--color-footer);
-  padding: 2rem;
+  padding: 2.2rem 6rem;
   position: absolute;
-  top: 40px;
-  right: 0;
-  margin-top: 1rem;
-  min-width: 210px;
-  border-radius: 5px;
+  width: fit-content;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
   box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
 }
 
-.gpt3__navbar-menu_container p {
-  margin: 1rem 0;
+.kw__navbar-menu_container.shifted {
+  visibility: visible;
+  opacity: 1;
+  top: 5px;
 }
 
-.gpt3__navbar-menu_container-links-sign {
+.kw__navbar-menu_container p {
+  margin-top: 1rem;
+}
+
+.kw__navbar-menu_container-links {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.kw__navbar-menu_container-links p {
+  margin: 0;
+}
+
+.kw__navbar-menu_container-links-sign {
   display: none;
 }
 
 @media screen and (max-width: 1050px) {
-  .gpt3__navbar-links_container {
+  .kw__navbar-links_container {
     display: none;
   }
 
-  .gpt3__navbar-menu {
+  .kw__navbar-menu {
     display: flex;
+  }
+  .kw__navbar-menu_container {
+    position: absolute;
+    text-align: start;
+    top: 90px;
+    left: auto;
+    right: -100%;
+    transform: translateX(0);
+    clip-path: none;
+    width: 100vw;
+    height: 80vh;
+    background-color: rebeccapurple;
+    z-index: 10000;
+  }
+
+  .kw__navbar-menu_container.shifted {
+    top: 90px;
+    left: auto;
+    right: 0;
+  }
+  .kw__navbar-menu_container-links {
+    display: flex;
+    flex-direction: column;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .gpt3__navbar {
+  .kw__navbar {
     padding: 2rem 4rem;
+  }
+
+  .kw__navbar-sign {
+    display: none;
+  }
+  .kw__navbar-menu_container-links-sign {
+    text-align: center;
+  }
+
+  .kw__navbar-menu_container-links-sign {
+    display: block;
   }
 }
 
-@media screen and (max-width: 550px) {
-  .gpt3__navbar {
+@media screen and (max-width: 600px) {
+  .kw__navbar {
     padding: 2rem;
-  }
-
-  .gpt3__navbar-sign {
-    display: none;
-  }
-
-  .gpt3__navbar-menu_container {
-    top: 20px;
-  }
-
-  .gpt3__navbar-menu_container-links-sign {
-    display: block;
   }
 }
