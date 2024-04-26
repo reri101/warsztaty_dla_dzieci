@@ -7,11 +7,17 @@
   clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
   transform: translateY(-70px);
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .category_slider-content {
+  position: relative;
   margin: 4rem 1rem;
   padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
   background-color: rgb(243, 243, 243);
   border-radius: var(--border-radius);
   display: flex;
@@ -37,11 +43,11 @@
 }
 
 .scroll-button.left {
-  left: 20%;
+  left: 10%;
 }
 
 .scroll-button.right {
-  right: 20%;
+  right: 10%;
 }
 
 .category_slider-content-categories {

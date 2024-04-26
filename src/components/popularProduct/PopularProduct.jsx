@@ -10,13 +10,13 @@ const PopularProduct = () => {
         <span>artysctyczne</span>
         <h5>Las w słoiku</h5>
         <p>
-          <b>Czas trwania:</b> 45 minut
+          <b>Czas trwania:</b> 45 - 60 minut
         </p>
         <p>
-          <b>Max ilość osób w grupie:</b> 40
+          <b>Max ilość osób w grupie:</b> 30
         </p>
         <p>
-          <b>Wiek uczestników:</b> 3-18 lat
+          <b>Wiek uczestników:</b> 3-12 lat
         </p>
       </div>
     </div>

@@ -14,7 +14,7 @@ const Footer = () => {
     <div className="kw__footer ">
       <div className="kw__footer-main">
         <div className="kw__footer-company">
-          <h2>Kids Workshop</h2>
+          <h2>KreatywnyRex</h2>
           <p>
             Jesteśmy firmą oferującą różnorodne warsztaty dla dzieci, od
             artystycznych i sensorycznych po kulinarne. Zajęcia rozwijają
@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="kw__footer-copyright">
-        <p>Copyright © 2024 KidsWorkshop. All rights reserved.</p>
+        <p>Copyright © 2024 KreatywnyRex. All rights reserved.</p>
       </div>
     </div>
   );

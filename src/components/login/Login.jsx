@@ -43,7 +43,7 @@ const Login = () => {
               <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
           </div>
-          <span>lub użyj danych do rejestracji</span>
+          <span>lub użyj wymaganych informacji</span>
           <input type="text" placeholder="Imię i nazwisko" />
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Hasło" />
@@ -68,7 +68,7 @@ const Login = () => {
               <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
           </div>
-          <span>lub użyj emaila i hasła</span>
+          <span>lub wpisz dane</span>
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Hasło" />
           <a href="#">Zapomniałeś hasła?</a>

@@ -17,9 +17,10 @@
 }
 
 .categoryItem:hover {
-  scale: 105%;
+  scale: 110%;
   transform: translateX(0);
-  top: calc(50% - 120px);
+  top: calc(50% - 130px);
+  box-shadow: 0 5px 15px rgba(255, 166, 0, 0.3);
 }
 
 .categoryItem-image {
