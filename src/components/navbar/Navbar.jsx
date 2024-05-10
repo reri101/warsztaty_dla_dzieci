@@ -38,7 +38,9 @@ const Navbar = () => {
       <div className="kw__navbar-links">
         <div className="kw__navbar-links_logo">
           {/* <img src={logo} alt="logo" /> */}
-          <h2>KreatywnyRex</h2>
+          <Link to={"/"}>
+            <h2>KreatywnyRex</h2>
+          </Link>
         </div>
         <div className="kw__navbar-links_container">
           <Menu />

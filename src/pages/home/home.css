@@ -1,3 +1,15 @@
+.App {
+  background: var(--color-bg);
+  background-repeat: repeat;
+  background: radial-gradient(
+      circle at 30% 3%,
+      rgba(54, 35, 0, 0.9) 0%,
+      rgba(4, 12, 24, 1) 100%
+    ),
+    url(../../assets//szlaczki_bg.jpg);
+  background-size: 15%;
+}
+
 .video_bg {
   position: relative;
   height: 500px;

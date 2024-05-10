@@ -5,6 +5,9 @@
   align-items: center;
   padding: 2rem 6rem;
   transition: transform 0.5s ease-in-out;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
 }
 
 .kw__navbar h2 {

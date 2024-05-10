@@ -1,9 +1,18 @@
 .popularP {
+  top: 0;
+  position: relative;
   margin: 1.5rem;
   width: 300px;
   min-width: 250px;
   padding: 10px 12px;
   border: 1px solid #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.popularP:hover {
+  top: -20px;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
 .popularP img {

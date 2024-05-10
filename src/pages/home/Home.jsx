@@ -4,12 +4,14 @@ import { Navbar } from "../../components";
 import video from "../../assets/warsztaty_1.mp4";
 import video2 from "../../assets/kids_workshop_background.jpg";
 import "./home.css";
-export default function Home() {
+
+function Home() {
   const [currentVideo, setCurrentVideo] = useState(video2);
 
   const handleVideoEnd = () => {
     setCurrentVideo((prevVideo) => (prevVideo === video2 ? video : video2));
   };
+
   return (
     <div className="App">
       <div className="video_bg">
@@ -35,3 +37,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
