@@ -7,11 +7,15 @@ import { Footer, WorkshopDetails } from "../../containers";
 function WorkshopPage() {
   //   const { workshopName } = useParams();
   const [workshopDetails, setWorkshopDetails] = useState([]);
+  const { id } = useParams();
 
+  console.log(id);
   useEffect(() => {
     const fetchWorkshops = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/workshop/${1}`);
+        const response = await fetch(
+          `http://localhost:8080/api/workshop/${id}`
+        );
         const data = await response.json();
         setWorkshopDetails(data);
       } catch (error) {

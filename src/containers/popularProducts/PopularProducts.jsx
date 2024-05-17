@@ -26,13 +26,7 @@ const PopularProducts = () => {
       <p>Te zajęcia pokochali nasi klienci</p>
       <div className="product-container">
         {workshops.map((workshop) => (
-          <Link
-            to={`/warsztat/${workshop.title
-              .toLowerCase()
-              .replace(/\s+/g, "-")}`}
-          >
-            <PopularProduct workshop={workshop} />
-          </Link>
+          <PopularProduct workshop={workshop} />
         ))}
       </div>
     </div>

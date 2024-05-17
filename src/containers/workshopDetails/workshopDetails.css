@@ -8,6 +8,8 @@
   gap: 1rem;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  top: -300px;
 }
 
 .workshopDetails__description {
@@ -19,13 +21,16 @@
   width: 100%;
   max-height: 500px;
   object-fit: cover;
+  border: 2px solid white;
   border-radius: 20px;
   margin-bottom: 0.5rem;
 }
 
 .workshopDetails__descriptionText {
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 17px;
+  line-height: 1.5;
+  word-spacing: 0.2rem;
 }
 
 .workshopDetails__specific {
@@ -37,6 +42,9 @@
   padding: 0;
 }
 
+.workshopDetails__specificList .instructor-li {
+  background-color: #fff;
+}
 .workshopDetails__specificList li {
   margin-bottom: 10px;
   background-color: #f7f7f7;
@@ -45,6 +53,82 @@
   border-radius: 20px;
 }
 
+.workshopDetails__specificList li svg {
+  margin-right: 0.5rem;
+}
+
 .workshopDetails__specificList p {
   margin-top: 0.5rem;
+}
+
+.workshopDetails__instructor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.workshopDetails__instructorPhoto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.workshopDetails__instructorPhoto img {
+  height: 100%;
+}
+
+.workshopDetails__instructorInfo p {
+  margin: 0;
+}
+
+.workshopDetails__instructorInfo p:first-child {
+  font-weight: bold;
+}
+
+.instructorOpinion,
+.instructorName {
+  text-align: center;
+}
+
+.instructorDescription {
+  text-align: left;
+}
+
+.halfStar {
+  position: relative;
+  display: inline-block;
+  width: 1em; /* Szerokość ikony */
+  height: 1em; /* Wysokość ikony */
+  overflow: hidden;
+}
+
+.halfStar::before {
+  content: "\f005"; /* Kod Unicode dla pustej gwiazdki */
+  color: gold; /* Kolor gwiazdki */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Wypełnienie gwiazdki - 50% */
+  overflow: hidden;
+}
+
+.starContainer {
+  position: relative;
+}
+
+.starClip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.goldStar {
+  color: gold; /* Kolor złoty */
 }

@@ -1,0 +1,14 @@
+.btn {
+  padding: 10px 20px;
+  background-image: var(--gradient-text);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.btn:hover {
+  opacity: 0.8;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
