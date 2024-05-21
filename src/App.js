@@ -4,6 +4,7 @@ import "./App.css";
 import LoginPage from "./pages/loginPage/LoginPage";
 import Home from "./pages/home/Home";
 import WorkshopPage from "./pages/workshopPage/WorkshopPage";
+import MyAccount from "./pages/myAccount/MyAccount";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/warsztat/:id" element={<WorkshopPage />} />
-        <Route path="/konto" />
+        <Route path="/twoje-konto" element={<MyAccount />} />
       </Routes>
     </Router>
   );

@@ -15,8 +15,6 @@ import {
   INTERVAL,
 } from "../../constants/config";
 
-interface indexProps {}
-
 interface DateType {
   justDate: Date | null;
   dateTime: Date | null;
@@ -36,7 +34,9 @@ function Calendar() {
 
   const scrollTimeContainer = (direction: "left" | "right") => {
     if (timeContainerRef.current) {
-      const { scrollLeft, clientWidth } = timeContainerRef.current;
+      const clientWidth =
+        (timeContainerRef.current.children[0].clientWidth + 10) * 3;
+      const { scrollLeft } = timeContainerRef.current;
       const scrollAmount = direction === "left" ? -clientWidth : clientWidth;
       timeContainerRef.current.scrollTo({
         left: scrollLeft + scrollAmount,
@@ -46,7 +46,7 @@ function Calendar() {
   };
 
   const getTimes = () => {
-    if (!date.justDate) return;
+    if (!date.justDate) return [];
 
     const { justDate } = date;
     const beginning = add(justDate, { hours: STORE_OPENING_TIME });
@@ -83,8 +83,15 @@ function Calendar() {
             {"<"}
           </button>
           <div className="time-container" ref={timeContainerRef}>
-            {times?.map((time, i) => (
-              <div key={`times-${i}`} className="time-container__item">
+            {times.map((time, i) => (
+              <div
+                key={`times-${i}`}
+                className={`time-container__item ${
+                  date.dateTime && date.dateTime.getTime() === time.getTime()
+                    ? "time-container__item--active"
+                    : ""
+                }`}
+              >
                 <button
                   type="button"
                   onClick={() =>

@@ -1,0 +1,25 @@
+.myaccount {
+  width: 100%;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.myaccount__header {
+  width: 100vw;
+  height: 70vh;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  clip-path: polygon(0 0, 100% 0%, 100% 90%, 0 100%);
+  background-image: url(../../assets/bg4.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

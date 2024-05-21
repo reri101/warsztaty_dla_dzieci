@@ -1,0 +1,10 @@
+.user_details {
+  width: 80%;
+  min-height: 700px;
+  background-color: white;
+  position: relative;
+  top: -230px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+}

@@ -212,6 +212,11 @@
   transform: translateX(200%);
 }
 
+.error-message {
+  margin-top: 10px;
+  color: red;
+}
+
 @media screen and (max-width: 600px) {
   .login_container {
     width: 100%;

@@ -26,7 +26,7 @@ const PopularProducts = () => {
       <p>Te zajęcia pokochali nasi klienci</p>
       <div className="product-container">
         {workshops.map((workshop) => (
-          <PopularProduct workshop={workshop} />
+          <PopularProduct workshop={workshop} key={workshop.id} />
         ))}
       </div>
     </div>

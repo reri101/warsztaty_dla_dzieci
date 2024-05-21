@@ -5,3 +5,5 @@ export { default as PopularProduct } from "./popularProduct/PopularProduct";
 export { default as CategoryItem } from "./categoryItem/CategoryItem";
 export { default as Button } from "./button/Button";
 export { default as Calendar } from "./calendar/Calendar";
+export { default as UserInformation } from "./userInformation/UserInformation";
+export { default as UserReservationHistory } from "./userReservationHistory/UserReservationHistory";
