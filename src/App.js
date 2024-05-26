@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import LoginPage from "./pages/loginPage/LoginPage";
-import Home from "./pages/home/Home";
-import WorkshopPage from "./pages/workshopPage/WorkshopPage";
-import MyAccount from "./pages/myAccount/MyAccount";
+import Home from "./pages/Home/Home";
+import Workshop from "./pages/Workshop/Workshop";
+import UserProfile from "./pages/UserProfile/UserProfile";
 
 function App() {
   return (
@@ -12,8 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/warsztat/:id" element={<WorkshopPage />} />
-        <Route path="/twoje-konto" element={<MyAccount />} />
+        <Route path="/warsztat/:id" element={<Workshop />} />
+        <Route path="/twoje-konto" element={<UserProfile />} />
       </Routes>
     </Router>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./popularProduct.css";
-import workshop_photo from "../../assets/kids_workshop_background.jpg";
+import workshop_photo from "../../../assets/kids_workshop_background.jpg";
 import { Link } from "react-router-dom";
 
 const PopularProduct = ({ workshop }) => {

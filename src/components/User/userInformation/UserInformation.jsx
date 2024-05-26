@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../button/Button";
-import jpg from "../../assets/joannaN.png";
+import jpg from "../../../assets/joannaN.png";
 import "./userInformation.css";
 
 function UserInformation({ user }) {

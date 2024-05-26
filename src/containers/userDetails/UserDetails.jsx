@@ -25,7 +25,6 @@ function UserDetails() {
           }
         );
         setUserinfo(response.data);
-        localStorage.setItem("userinfo", JSON.stringify(response.data));
       } catch (error) {
         console.error("Error fetching user data:", error);
         navigate("/login");

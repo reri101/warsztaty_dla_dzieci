@@ -1,6 +1,6 @@
 import React from "react";
 import "./userReservationHistory.css";
-import photo from "../../assets/bg2.jpg";
+import photo from "../../../assets/bg2.jpg";
 
 function UserReservationHistory() {
   const reservations = [

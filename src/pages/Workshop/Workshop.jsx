@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./workshopPage.css";
+import "./workshop.css";
 import { Navbar } from "../../components";
 import { Footer, WorkshopDetails } from "../../containers";
 

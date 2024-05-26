@@ -1,9 +1,9 @@
 import React from "react";
 import { Navbar } from "../../components";
 import { UserDetails, Footer } from "../../containers";
-import "./myAccount.css";
+import "./userProfile.css";
 
-function MyAccount() {
+function UserProfile() {
   return (
     <div className="myaccount">
       <Navbar />
@@ -14,4 +14,4 @@ function MyAccount() {
   );
 }
 
-export default MyAccount;
+export default UserProfile;
