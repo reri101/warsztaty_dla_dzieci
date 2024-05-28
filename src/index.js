@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createRoot } from "react-dom/client";
-import App from "./App";
+
 import "./index.css";
+import App from "./App";
+import { ContextProvider } from "./contexts/ContextProvider";
 
-const rootElement = document.getElementById("root");
-
-createRoot(rootElement).render(
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 // Jeśli chcesz mierzyć wydajność swojej aplikacji, użyj poniższej funkcji

@@ -178,7 +178,7 @@ const Login = () => {
           <div className="toggle-panel toggle-sign_in">
             <h1>Cześć!</h1>
             <p>Jeśli posiadasz już konto, przejdź do logowania</p>
-            <button className="hidden" id="login" onClick={handleLoginClick}>
+            <button className="hiddenBtn" id="login" onClick={handleLoginClick}>
               Zaloguj się
             </button>
           </div>
@@ -188,7 +188,7 @@ const Login = () => {
               Jeśli jednak nie posiadasz jeszcze konta przejdź do rejestracji
             </p>
             <button
-              className="hidden"
+              className="hiddenBtn"
               id="register"
               onClick={handleRegisterClick}
             >

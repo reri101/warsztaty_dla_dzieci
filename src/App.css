@@ -15,6 +15,21 @@ a {
   text-decoration: none;
 }
 
+body h1 {
+  font-size: var(--h1-size);
+  font-weight: 700;
+}
+
+body h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+body h3 {
+  font-size: 1.17rem;
+  font-weight: 700;
+}
+
 .gradient__bg {
   /* ff 3.6+ */
   background: -moz-radial-gradient(

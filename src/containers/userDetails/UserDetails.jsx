@@ -27,6 +27,7 @@ function UserDetails() {
         setUserinfo(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
+        localStorage.removeItem("token");
         navigate("/login");
       }
     };

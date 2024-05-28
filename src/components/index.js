@@ -1,6 +1,5 @@
 export { default as Feature } from "./User/feature/Feature";
 export { default as Navbar } from "./User/navbar/Navbar";
-export { default as Login } from "./User/login/Login";
 export { default as PopularProduct } from "./User/popularProduct/PopularProduct";
 export { default as CategoryItem } from "./User/categoryItem/CategoryItem";
 export { default as Button } from "./User/button/Button";

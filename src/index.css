@@ -24,7 +24,3 @@
   --color-light-orange: #faecd2;
   --color-intense-orange: #ca8300;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

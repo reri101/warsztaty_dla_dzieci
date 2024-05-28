@@ -22,7 +22,7 @@ const PopularProducts = () => {
 
   return (
     <div className="popularPrdcs section__padding">
-      <h2 className="gradient__text">Popularne warsztaty</h2>
+      <h1 className="gradient__text">Popularne warsztaty</h1>
       <p>Te zajęcia pokochali nasi klienci</p>
       <div className="product-container">
         {workshops.map((workshop) => (
