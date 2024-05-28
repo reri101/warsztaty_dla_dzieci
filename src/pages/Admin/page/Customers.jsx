@@ -64,6 +64,16 @@ function Customers() {
     fetchUser();
   }, []);
 
+  const handleActionBegin = (args) => {
+    if (args.requestType === "delete") {
+      if (
+        !window.confirm("Czy na pewno chcesz usunąć wybranych użytkowników?")
+      ) {
+        args.cancel = true;
+      }
+    }
+  };
+
   const handleActionComplete = (args) => {
     if (args.requestType === "delete") {
       const deletedIds = args.data.map((item) => item.CustomerID);
@@ -93,6 +103,7 @@ function Customers() {
         allowSorting
         toolbar={["Delete"]}
         editSettings={{ allowDeleting: true, allowEditing: true }}
+        actionBegin={handleActionBegin}
         actionComplete={handleActionComplete}
       >
         <ColumnsDirective>
