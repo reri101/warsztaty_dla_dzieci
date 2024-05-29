@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Workshop for kids Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+User Panel:
+![Zrzut ekranu 2024-05-29 141841](https://github.com/reri101/warsztaty_dla_dzieci/assets/97965269/1df8e203-d400-451a-b1d0-21d4346c71b3)
 
-## Available Scripts
+![Zrzut ekranu 2024-05-29 141857](https://github.com/reri101/warsztaty_dla_dzieci/assets/97965269/e718e0e1-1a79-4f8f-9ed4-fa2d95654cd7)
 
-In the project directory, you can run:
+![Zrzut ekranu 2024-05-29 141158](https://github.com/reri101/warsztaty_dla_dzieci/assets/97965269/28c2fe94-d8f9-4508-82df-300b0c27a111)
 
-### `npm start`
+![Zrzut ekranu 2024-05-29 141317](https://github.com/reri101/warsztaty_dla_dzieci/assets/97965269/39aa0348-d922-4a42-8376-f393d94d2fab)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Zrzut ekranu 2024-05-29 141325](https://github.com/reri101/warsztaty_dla_dzieci/assets/97965269/121247e0-433b-4e55-9cfa-50738c20a386)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Zrzut ekranu 2024-05-29 141407](https://github.com/reri101/warsztaty_dla_dzieci/assets/97965269/c95848aa-87f3-41d4-b524-d076f9b2f31a)
 
-### `npm test`
+![Zrzut ekranu 2024-05-29 141451](https://github.com/reri101/warsztaty_dla_dzieci/assets/97965269/2643d0eb-dbeb-425e-9510-f396e722865c)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Zrzut ekranu 2024-05-29 141523](https://github.com/reri101/warsztaty_dla_dzieci/assets/97965269/a67d1f43-d677-4398-954d-3c1c372da41c)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Admin Panel:
+![Zrzut ekranu 2024-05-29 150040](https://github.com/reri101/warsztaty_dla_dzieci/assets/97965269/52855721-c47a-4017-81e8-77204c64c49a)
