@@ -7,6 +7,8 @@ import Workshop from "./pages/Workshop/Workshop";
 import UserProfile from "./pages/UserProfile/UserProfile";
 import Admin from "./pages/Admin/Admin";
 import { ContextProvider } from "./contexts/ContextProvider";
+import Workshops from "./pages/Workshops/Workshops";
+import EditAccoutn from "./pages/EditAccoutn/EditAccoutn";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/profile-info" element={<EditAccoutn />} />
+        <Route path="/warsztaty" element={<Workshops />} />
         <Route path="/warsztat/:id" element={<Workshop />} />
         <Route path="/twoje-konto" element={<UserProfile />} />
 

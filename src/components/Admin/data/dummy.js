@@ -92,7 +92,7 @@ const gridEmployeeProfile = (props) => (
 const gridEmployeeCountry = (props) => (
   <div className="flex items-center justify-center gap-2">
     <GrLocation />
-    <span>{props.Country}</span>
+    <span>{props.City}</span>
   </div>
 );
 export const EditorData = () => (
@@ -427,19 +427,19 @@ export const customersGrid = [
     textAlign: "Center",
   },
   {
+    field: "Phone",
+    headerText: "Phone",
+    width: "100",
+    format: "C2",
+    textAlign: "Center",
+  },
+  {
     field: "Status",
     headerText: "Status",
     width: "130",
     format: "yMd",
     textAlign: "Center",
     template: customerGridStatus,
-  },
-  {
-    field: "Enabled",
-    headerText: "Enabled",
-    width: "100",
-    format: "C2",
-    textAlign: "Center",
   },
   {
     field: "TrCount",
@@ -466,22 +466,35 @@ export const customersGrid = [
 ];
 
 export const employeesGrid = [
+
+  { type: "checkbox", width: "50" },
   {
     headerText: "Employee",
     width: "150",
     template: gridEmployeeProfile,
     textAlign: "Center",
   },
-  { field: "Name", headerText: "", width: "0", textAlign: "Center" },
   {
-    field: "Title",
-    headerText: "Designation",
+    field: "Email",
+    headerText: "Email",
+    width: "150",
+    textAlign: "Center",
+  },
+  {
+    field: "Description",
+    headerText: "Description",
     width: "170",
     textAlign: "Center",
   },
   {
-    headerText: "Country",
-    width: "120",
+    field: "Phone",
+    headerText: "Phone",
+    width: "135",
+    textAlign: "Center",
+  },
+  {
+    headerText: "City",
+    width: "150",
     textAlign: "Center",
     template: gridEmployeeCountry,
   },
@@ -494,11 +507,14 @@ export const employeesGrid = [
     textAlign: "Center",
   },
 
+  
   {
-    field: "ReportsTo",
-    headerText: "Reports To",
-    width: "120",
+    field: "Status",
+    headerText: "Status",
+    width: "130",
+    format: "yMd",
     textAlign: "Center",
+    template: customerGridStatus,
   },
   {
     field: "EmployeeID",
@@ -523,7 +539,7 @@ export const links = [
     title: "Strony",
     links: [
       {
-        name: "zamówienia",
+        name: "rezerwacje",
         icon: <AiOutlineShoppingCart />,
       },
       {
@@ -664,9 +680,9 @@ export const earningData = [
   },
   {
     icon: <HiOutlineRefresh />,
-    amount: "39,354",
-    percentage: "-12%",
-    title: "Zwroty",
+    amount: "36",
+    percentage: "-20%",
+    title: "Instruktorzy",
     iconColor: "rgb(0, 194, 146)",
     iconBg: "rgb(235, 250, 242)",
     pcColor: "red-600",
@@ -889,24 +905,28 @@ export const ordersGrid = [
     width: "120",
   },
   {
-    field: "OrderItems",
-    headerText: "Item",
+    field: "WorkshopTitle",
+    headerText: "WorkshopTitle",
     width: "150",
     editType: "dropdownedit",
     textAlign: "Center",
   },
   {
-    field: "CustomerName",
-    headerText: "Customer Name",
+    field: "CustomerEmail",
+    headerText: "CustomerEmail",
+    width: "150",
+    textAlign: "Center",
+  },
+  {
+    field: "InstructorEmail",
+    headerText: "InstructorEmail",
     width: "150",
     textAlign: "Center",
   },
   {
     field: "TotalAmount",
     headerText: "Total Amount",
-    format: "C2",
     textAlign: "Center",
-    editType: "numericedit",
     width: "150",
   },
   {
@@ -916,17 +936,17 @@ export const ordersGrid = [
     textAlign: "Center",
     width: "120",
   },
-  {
-    field: "OrderID",
-    headerText: "Order ID",
-    width: "120",
-    textAlign: "Center",
-  },
 
   {
     field: "Location",
     headerText: "Location",
     width: "150",
+    textAlign: "Center",
+  },
+  {
+    field: "OrderID",
+    headerText: "Order ID",
+    width: "120",
     textAlign: "Center",
   },
 ];
@@ -3074,7 +3094,7 @@ export const stackedPrimaryXAxis = {
 
 export const stackedPrimaryYAxis = {
   lineStyle: { width: 0 },
-  minimum: 100,
+  minimum: 0,
   maximum: 400,
   interval: 100,
   majorTickLines: { width: 0 },

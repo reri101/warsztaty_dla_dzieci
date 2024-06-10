@@ -47,3 +47,10 @@
   height: auto;
   border-radius: 5px;
 }
+
+.workshopReservationInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

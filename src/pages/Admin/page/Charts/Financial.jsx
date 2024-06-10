@@ -61,7 +61,7 @@ function Financial() {
               xName="x"
               yName="low"
               name="Apple Inc"
-              type="Hilo"
+              type="HiloOpenClose"
               low="low"
               high="high"
             />

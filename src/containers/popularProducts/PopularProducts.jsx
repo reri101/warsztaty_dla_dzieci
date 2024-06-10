@@ -9,7 +9,9 @@ const PopularProducts = () => {
   useEffect(() => {
     const fetchWorkshops = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/workshop`);
+        const response = await fetch(
+          `http://localhost:8080/api/workshop?pageSize=8`
+        );
         const data = await response.json();
         setWorkshops(data.content);
       } catch (error) {

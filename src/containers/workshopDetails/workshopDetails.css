@@ -81,6 +81,7 @@
 
 .workshopDetails__instructorPhoto img {
   height: 100%;
+  max-width: none;
 }
 
 .workshopDetails__instructorInfo p {
@@ -97,7 +98,7 @@
 }
 
 .instructorDescription {
-  text-align: left;
+  text-align: justify;
 }
 
 .halfStar {
@@ -131,4 +132,29 @@
 
 .goldStar {
   color: gold; /* Kolor złoty */
+}
+
+.workshopDetails__specificList .workshopArea_map {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  height: 300px; /* Ustal wysokość kontenera mapy */
+  border-radius: 20px; /* Opcjonalnie, zaokrąglone rogi */
+}
+
+.workshopArea_title {
+  position: absolute;
+  width: 300px;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.workshopArea_title p {
+  text-align: center;
+  margin: 0;
 }

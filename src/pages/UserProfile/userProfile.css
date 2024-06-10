@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: var(--color-bg);
 }
 
 .myaccount__header {
@@ -13,8 +14,8 @@
   -webkit-mask: linear-gradient(
     90deg,
     transparent,
-    white 20%,
-    white 80%,
+    black 20%,
+    black 80%,
     transparent
   );
   mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);

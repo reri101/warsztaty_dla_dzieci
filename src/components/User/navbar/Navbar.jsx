@@ -6,13 +6,13 @@ import "./navbar.css";
 const Menu = () => (
   <>
     <p>
-      <a href="/login">Warsztaty</a>
+      <a href="/warsztaty">Warsztaty</a>
     </p>
     <p>
-      <a href="#wgpt3">Kontakt</a>
+      <a href="/">Kontakt</a>
     </p>
     <p>
-      <a href="#possibility">O nas</a>
+      <a href="/">O nas</a>
     </p>
   </>
 );

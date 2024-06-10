@@ -47,13 +47,12 @@ function Customers() {
           Email: user.email,
           Status: user.enabled ? "Active" : "Inactive",
           StatusBg: user.enabled ? "#8BE78B" : "#FF0000",
-          Enabled: "0",
+          Phone: `${user.phone}`,
           TrCount: `${user.reservationCount}`,
           Location: user.city,
         }));
 
         setUsersinfo(transformedData);
-        console.log(transformedData);
       } catch (error) {
         console.error("Error fetching user data:", error);
         localStorage.removeItem("token");
@@ -77,18 +76,18 @@ function Customers() {
   const handleActionComplete = (args) => {
     if (args.requestType === "delete") {
       const deletedIds = args.data.map((item) => item.CustomerID);
+      // TODO dodać usuwanie do api po liscie deletedIds
       const updatedUsersinfo = usersinfo.filter(
         (user) => !deletedIds.includes(user.CustomerID)
       );
       setUsersinfo(updatedUsersinfo);
-      console.log("Updated user info:", updatedUsersinfo);
     } else if (args.requestType === "save") {
       const updatedData = args.data;
+      // TODO dodać edytowanie do api po id z updatedData i całym tym obiekcie
       const updatedUsersinfo = usersinfo.map((user) =>
         user.CustomerID === updatedData.CustomerID ? updatedData : user
       );
       setUsersinfo(updatedUsersinfo);
-      console.log("Updated user info after editing:", updatedUsersinfo);
     }
   };
 

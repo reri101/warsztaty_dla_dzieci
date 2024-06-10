@@ -6,3 +6,4 @@ export { default as Button } from "./User/button/Button";
 export { default as Calendar } from "./User/calendar/Calendar";
 export { default as UserInformation } from "./User/userInformation/UserInformation";
 export { default as UserReservationHistory } from "./User/userReservationHistory/UserReservationHistory";
+export { default as ReservationConfirmation } from "./User/reservationConfirmation/ReservationConfirmation";

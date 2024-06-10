@@ -9,7 +9,6 @@ function WorkshopPage() {
   const [workshopDetails, setWorkshopDetails] = useState([]);
   const { id } = useParams();
 
-  console.log(id);
   useEffect(() => {
     const fetchWorkshops = async () => {
       try {

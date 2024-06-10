@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ReactCalendar from "react-calendar";
 import "./calendar.css";
 import {
@@ -20,17 +20,22 @@ interface DateType {
   dateTime: Date | null;
 }
 
+interface CalendarProps {
+  selectedDate: DateType;
+  setSelectedDate: React.Dispatch<React.SetStateAction<DateType>>;
+}
+
 const resetTime = (date: Date) => {
   return setMilliseconds(setSeconds(setMinutes(setHours(date, 0), 0), 0), 0);
 };
 
-function Calendar() {
-  const [date, setDate] = useState<DateType>({
-    justDate: resetTime(new Date()),
-    dateTime: null,
-  });
-
+function Calendar({ selectedDate, setSelectedDate }: CalendarProps) {
+  const [showTimes, setShowTimes] = useState(false);
   const timeContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setSelectedDate((prev) => ({ ...prev, justDate: resetTime(new Date()) }));
+  }, []);
 
   const scrollTimeContainer = (direction: "left" | "right") => {
     if (timeContainerRef.current) {
@@ -46,9 +51,9 @@ function Calendar() {
   };
 
   const getTimes = () => {
-    if (!date.justDate) return [];
+    if (!selectedDate.justDate) return [];
 
-    const { justDate } = date;
+    const { justDate } = selectedDate;
     const beginning = add(justDate, { hours: STORE_OPENING_TIME });
     const end = add(justDate, { hours: STORE_CLOSE_TIME });
 
@@ -68,49 +73,48 @@ function Calendar() {
         className="REACT-CALENDAR"
         view="month"
         onClickDay={(date) =>
-          setDate((prev) => ({ ...prev, justDate: resetTime(date) }))
+          setSelectedDate(() => ({
+            justDate: resetTime(date),
+            dateTime: null,
+          }))
         }
       />
-      {date.justDate ? (
-        <div
-          className="time-container-wrapper"
-          style={{ position: "relative" }}
+      <div className="time-container-wrapper" style={{ position: "relative" }}>
+        <button
+          className="time-container__scroll-button time-container__scroll-button--left"
+          onClick={() => scrollTimeContainer("left")}
         >
-          <button
-            className="time-container__scroll-button time-container__scroll-button--left"
-            onClick={() => scrollTimeContainer("left")}
-          >
-            {"<"}
-          </button>
-          <div className="time-container" ref={timeContainerRef}>
-            {times.map((time, i) => (
-              <div
-                key={`times-${i}`}
-                className={`time-container__item ${
-                  date.dateTime && date.dateTime.getTime() === time.getTime()
-                    ? "time-container__item--active"
-                    : ""
-                }`}
+          {"<"}
+        </button>
+        <div className="time-container" ref={timeContainerRef}>
+          {times.map((time, i) => (
+            <div
+              key={`times-${i}`}
+              className={`time-container__item ${
+                selectedDate.dateTime &&
+                selectedDate.dateTime.getTime() === time.getTime()
+                  ? "time-container__item--active"
+                  : ""
+              }`}
+            >
+              <button
+                type="button"
+                onClick={() =>
+                  setSelectedDate((prev) => ({ ...prev, dateTime: time }))
+                }
               >
-                <button
-                  type="button"
-                  onClick={() =>
-                    setDate((prev) => ({ ...prev, dateTime: time }))
-                  }
-                >
-                  {format(time, "kk:mm")}
-                </button>
-              </div>
-            ))}
-          </div>
-          <button
-            className="time-container__scroll-button time-container__scroll-button--right"
-            onClick={() => scrollTimeContainer("right")}
-          >
-            {">"}
-          </button>
+                {format(time, "kk:mm")}
+              </button>
+            </div>
+          ))}
         </div>
-      ) : null}
+        <button
+          className="time-container__scroll-button time-container__scroll-button--right"
+          onClick={() => scrollTimeContainer("right")}
+        >
+          {">"}
+        </button>
+      </div>
     </div>
   );
 }

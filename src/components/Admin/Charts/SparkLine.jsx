@@ -15,16 +15,16 @@ class SparkLine extends React.PureComponent {
         height={height}
         width={width}
         lineWidth={1}
-        valueType="Numeric"
+        valueType="Category"
         fill={color}
         border={{ color: currentColor, width: 2 }}
         dataSource={data}
-        xName="x"
-        yName="yval"
+        xName="month"
+        yName="total_revenue"
         type={type}
         tooltipSettings={{
           visible: true,
-          format: "${x} : data ${yval}",
+          format: "${month} : przychód ${total_revenue} zł",
           trackLineSettings: {
             visible: true,
           },

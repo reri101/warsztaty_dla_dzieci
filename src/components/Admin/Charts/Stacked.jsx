@@ -9,15 +9,30 @@ import {
   Tooltip,
   SeriesCollectionDirective,
 } from "@syncfusion/ej2-react-charts";
-import {
-  stackedCustomSeries,
-  stackedPrimaryXAxis,
-  stackedPrimaryYAxis,
-} from "../data/dummy";
+import { stackedPrimaryXAxis } from "../data/dummy";
 import { useStateContext } from "../../../contexts/ContextProvider";
 
-function Stacked({ width, height }) {
+function Stacked({ width, height, monthlyRevenueData, monthlyExpenseData }) {
   const { currentMode } = useStateContext();
+  const maxRevenue = Math.max(
+    ...monthlyRevenueData.map((month) => parseFloat(month.total_revenue || 0))
+  );
+  const maxExpense = Math.max(
+    ...monthlyExpenseData.map((month) => parseFloat(month.total_expense || 0))
+  );
+  const maxY = maxExpense + maxRevenue;
+
+  const stackedPrimaryYAxis = {
+    lineStyle: { width: 0 },
+    minimum: 0,
+    maximum: maxY,
+    interval: Math.ceil(maxY / 10000) * 1000,
+    majorTickLines: { width: 0 },
+    majorGridLines: { width: 1 },
+    minorGridLines: { width: 1 },
+    minorTickLines: { width: 0 },
+    labelFormat: "{value}",
+  };
 
   return (
     <ChartComponent
@@ -33,9 +48,20 @@ function Stacked({ width, height }) {
     >
       <Inject services={[Legend, Category, StackingColumnSeries, Tooltip]} />
       <SeriesCollectionDirective>
-        {stackedCustomSeries.map((item, index) => (
-          <SeriesDirective key={index} {...item} />
-        ))}
+        <SeriesDirective
+          dataSource={monthlyRevenueData}
+          xName="month"
+          yName="total_revenue"
+          type="StackingColumn"
+          name="Przychody"
+        />
+        <SeriesDirective
+          dataSource={monthlyExpenseData}
+          xName="month"
+          yName="total_expense"
+          type="StackingColumn"
+          name="Wydatki"
+        />
       </SeriesCollectionDirective>
     </ChartComponent>
   );

@@ -4,17 +4,16 @@
   background-color: #ffffff00;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  position: relative;
+  z-index: 2;
 }
 
 .kw__header-content {
-  width: fit-content;
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 700px;
+  width: 600px;
 }
 
 .kw__header-content h1 {
@@ -38,11 +37,11 @@
 }
 
 .kw__header-content__input {
-  width: 580px;
+  width: 100%;
   margin: 2rem 0 1rem;
   display: flex;
   background: #fff;
-  border-radius: var(--border-radius);
+  border-radius: 16px;
   border: 2px solid var(--color-foter);
   padding: 0.8rem;
   display: flex;
@@ -65,6 +64,46 @@
   padding: 0 1rem;
   outline: none;
   color: #000000;
+}
+
+.kw__header-content__search {
+  position: absolute;
+  font-family: var(--font-family);
+  font-size: 20px;
+  width: 600px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 16px;
+  border: 2px solid var(--color-foter);
+  margin: 3rem 0 1rem;
+  top: 35vh;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.kw__header-workshop_result {
+  transition: all 0.2s ease-in-out;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.kw__header-workshop_result p {
+  color: #797979;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin: 0;
+}
+
+.kw__header-workshop_result:first-child p {
+  padding: 1rem 1rem 0.5rem 1rem;
+  margin: 0;
+}
+
+.kw__header-workshop_result:last-child p {
+  padding-bottom: 1rem;
+  margin: 0;
+}
+
+.kw__header-workshop_result:hover {
+  background-color: #d1d1d1;
 }
 
 @media screen and (max-width: 800px) {

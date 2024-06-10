@@ -69,7 +69,7 @@ const Login = () => {
       );
       localStorage.setItem("token", loginResponse.data.accessToken);
 
-      window.location.href = "/twoje-konto";
+      window.location.href = "/profile-info";
     } catch (error) {
       setErrorMessage(
         "Błąd rejestracji: sprawdź swoje dane i spróbuj ponownie."

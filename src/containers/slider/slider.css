@@ -3,13 +3,13 @@
   width: 100%;
   background-color: #fff;
   position: relative;
-  z-index: 2;
   clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
   transform: translateY(-70px);
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .category_slider-content {

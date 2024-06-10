@@ -9,10 +9,17 @@ const PopularProduct = ({ workshop }) => {
     <div className="popularProductContainer">
       <Link to={`/warsztat/${workshop.id}`}>
         <div className="popularP">
-          <img src={workshop_photo} alt="workshop_photo" />
+          <img
+            src={
+              workshopDetails.backgroundPhoto
+                ? `data:image/jpeg;base64,${workshopDetails.backgroundPhoto}`
+                : workshop_photo
+            }
+            alt="Zdjęcie warsztatu"
+          />
           <div className="description">
             {workshopDetails.holyday != null ? (
-              <span> {workshopDetails.holyday.name}</span>
+              <span> {workshopDetails.category.name}</span>
             ) : (
               <></>
             )}

@@ -12,9 +12,8 @@
 
 .video_bg {
   position: relative;
-  height: 500px;
-  z-index: 1;
-  overflow: hidden;
+  height: 55vh;
+  z-index: 2;
 }
 
 .header-bg_video {
@@ -22,13 +21,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   left: 0;
-  overflow: hidden;
   height: 100%;
   position: absolute;
   top: 0;
   width: 100%;
   background-image: url(https://dk2h3gy4kn9jw.cloudfront.net/web-2019/51911eb5/img/header-bg-pl.88f9dab.jpg);
-  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+  z-index: 1;
 }
 
 .header-bg_video video {

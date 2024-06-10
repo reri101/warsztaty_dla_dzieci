@@ -12,11 +12,6 @@
   width: fit-content;
 }
 
-.popularPrdcs p {
-  font-size: var(--p-size);
-  margin: 1.5rem 0;
-}
-
 .popularPrdcs .product-container {
   width: 100%;
   display: flex;

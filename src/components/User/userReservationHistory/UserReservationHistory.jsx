@@ -2,74 +2,67 @@ import React from "react";
 import "./userReservationHistory.css";
 import photo from "../../../assets/bg2.jpg";
 
-function UserReservationHistory() {
-  const reservations = [
-    {
-      id: 1,
-      workshopName: "Warsztaty malowania",
-      workshopInstructor: "Anna Kowalska",
-      workshopImage: photo,
-      location: "Kraków",
-      childrenCount: 28,
-      startTime: "10:00",
-      cost: 650,
-    },
-    {
-      id: 2,
-      workshopName: "Warsztaty malowania",
-      workshopInstructor: "Anna Kowalska",
-      workshopImage: photo,
-      location: "Kraków",
-      childrenCount: 20,
-      startTime: "10:00",
-      cost: 590,
-    },
-    {
-      id: 3,
-      workshopName: "Warsztaty malowania",
-      workshopInstructor: "Anna Kowalska",
-      workshopImage: photo,
-      location: "Kraków",
-      childrenCount: 22,
-      startTime: "10:00",
-      cost: 470,
-    },
-  ];
-
+function UserReservationHistory({ reservationInfo }) {
+  const options = {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: false,
+  };
+  console.log(reservationInfo);
   return (
     <div className="user_reservation_history">
       <hr />
-      <h2>Historia rezerwacji</h2>
-      <table className="reservation_table">
-        <thead>
-          <tr>
-            <th>Nazwa warsztatu</th>
-            <th>Zdjęcie główne</th>
-            <th>Instruktor warsztatu</th>
-            <th>Miejsce warsztatu</th>
-            <th>Ilość dzieci</th>
-            <th>Godzina rozpoczęcia</th>
-            <th>Koszt</th>
-          </tr>
-        </thead>
-        <tbody>
-          {reservations.map((reservation) => (
-            <tr key={reservation.id}>
-              <td>
-                <p>{reservation.workshopName}</p>
-              </td>
-              <td>
-                <img src={reservation.workshopImage} alt="Zdjęcie warsztatu" />
-              </td>
-              <td>{reservation.workshopInstructor}</td>
-              <td>{reservation.location}</td>
-              <td>{reservation.childrenCount}</td>
-              <td>{reservation.startTime}</td>
-              <td>{reservation.cost} PLN</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {reservationInfo ? (
+        <>
+          <h2>Historia rezerwacji</h2>
+          <table className="reservation_table">
+            <thead>
+              <tr>
+                <th> Warsztat</th>
+                <th>Instruktor warsztatu</th>
+                <th>Miejsce warsztatu</th>
+                <th>Ilość dzieci</th>
+                <th>Termin</th>
+                <th>Koszt</th>
+              </tr>
+            </thead>
+            <tbody>
+              {reservationInfo.map((reservation) => (
+                <tr key={reservation.id}>
+                  <td>
+                    <div className="workshopReservationInfo">
+                      <img
+                        src={
+                          reservation.workshopBackgroundPhoto
+                            ? `data:image/jpeg;base64,${reservation.workshopBackgroundPhoto}`
+                            : photo
+                        }
+                        alt="Zdjęcie warsztatu"
+                      />
+                      <p>{reservation.workshopTitle}</p>
+                    </div>
+                  </td>
+                  <td>{reservation.instructorEmail}</td>
+                  <td>{reservation.place}</td>
+                  <td>{reservation.kidsNumber}</td>
+                  <td>
+                    {new Date(
+                      reservation.reservationDateTime
+                    ).toLocaleDateString()}
+                    {",  "}
+                    {new Date(
+                      reservation.reservationDateTime
+                    ).toLocaleTimeString([], options)}
+                  </td>
+                  <td>{reservation.price} PLN</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      ) : (
+        <h2>Tutaj pojawi się historia twoich rezerwacji</h2>
+      )}
     </div>
   );
 }

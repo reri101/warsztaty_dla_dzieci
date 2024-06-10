@@ -7,6 +7,7 @@ const Slider = () => {
   const sliderRef = useRef(null);
   const [children, setChildren] = useState([]);
   const [lastClickTime, setLastClickTime] = useState(0);
+  const [categories, setCategories] = useState([]);
 
   const handleScroll = (direction) => {
     const currentTime = new Date().getTime();
@@ -34,30 +35,45 @@ const Slider = () => {
   };
 
   useEffect(() => {
-    const slider = document.querySelector(
-      ".category_slider-content-categories-inside"
-    );
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch("http://localhost:8080/api/category");
+        const data = await response.json();
+        setCategories(data);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
 
-    if (slider) {
-      setChildren(Array.from(slider.children));
-
-      let translX = -332;
-      Array.from(slider.children).forEach((child, index) => {
-        translX += 166;
-        child.style.left = `${translX}px`;
-
-        if (index === 0 || index === children.length - 1) {
-          child.style.visibility = "hidden";
-        } else {
-          child.style.visibility = "visible";
-        }
-
-        setTimeout(() => {
-          child.style.transition = "all 0.4s ease-in-out";
-        }, 400);
-      });
-    }
+    fetchCategories();
   }, []);
+
+  useEffect(() => {
+    if (categories.length > 0) {
+      const slider = sliderRef.current;
+
+      if (slider) {
+        const sliderChildren = Array.from(slider.children);
+        setChildren(sliderChildren);
+
+        let translX = -332;
+        sliderChildren.forEach((child, index) => {
+          translX += 166;
+          child.style.left = `${translX}px`;
+
+          if (index === 0 || index === sliderChildren.length - 1) {
+            child.style.visibility = "hidden";
+          } else {
+            child.style.visibility = "visible";
+          }
+
+          setTimeout(() => {
+            child.style.transition = "all 0.4s ease-in-out";
+          }, 400);
+        });
+      }
+    }
+  }, [categories]);
 
   useEffect(() => {
     children.forEach((child, index) => {
@@ -80,32 +96,34 @@ const Slider = () => {
           onClick={() => handleScroll("left")}
           className="scroll-button left"
         >
-          ←
+          {"<"}
         </button>
         <div className="category_slider-content-categories">
           <div
             className="category_slider-content-categories-inside"
             ref={sliderRef}
           >
-            <CategoryItem title="Artystyczne" photo={photo1} />
-            <CategoryItem title="Kulinarne" photo={photo1} />
-            <CategoryItem title="Sensoryczne" photo={photo1} />
-            <CategoryItem title="Artystyczne" photo={photo1} />
-            <CategoryItem title="Kulinarne" photo={photo1} />
-            <CategoryItem title="Sensoryczne" photo={photo1} />
-            <CategoryItem title="Artystyczne" photo={photo1} />
-            <CategoryItem title="Kulinarne" photo={photo1} />
-            <CategoryItem title="Sensoryczne" photo={photo1} />
-            <CategoryItem title="Artystyczne" photo={photo1} />
-            <CategoryItem title="Kulinarne" photo={photo1} />
-            <CategoryItem title="Sensoryczne" photo={photo1} />
+            {categories.map((category, index) => (
+              <CategoryItem
+                keyId={index}
+                title={category.name}
+                photo={photo1}
+              />
+            ))}
+            <CategoryItem keyId={11} title="Artystyczne" photo={photo1} />
+            <CategoryItem keyId={12} title="Kulinarne" photo={photo1} />
+            <CategoryItem keyId={13} title="Sensoryczne" photo={photo1} />
+            <CategoryItem keyId={14} title="Artystyczne" photo={photo1} />
+            <CategoryItem keyId={15} title="Kulinarne" photo={photo1} />
+            <CategoryItem keyId={16} title="Sensoryczne" photo={photo1} />
+            <CategoryItem keyId={17} title="Artystyczne" photo={photo1} />
           </div>
         </div>
         <button
           onClick={() => handleScroll("right")}
           className="scroll-button right"
         >
-          →
+          {">"}
         </button>
       </div>
     </div>

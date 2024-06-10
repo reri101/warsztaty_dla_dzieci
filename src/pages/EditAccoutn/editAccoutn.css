@@ -1,0 +1,15 @@
+.edit_acc {
+  background: url(../../assets/bg3.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.edit_acc .background_filter {
+  background-color: rgba(0, 0, 0, 0.575);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}

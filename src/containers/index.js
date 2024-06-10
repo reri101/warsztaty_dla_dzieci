@@ -6,3 +6,4 @@ export { default as Slider } from "./slider/Slider";
 export { default as WorkshopDetails } from "./workshopDetails/WorkshopDetails";
 export { default as RezervationModal } from "./rezervationModal/RezervationModal";
 export { default as UserDetails } from "./userDetails/UserDetails";
+export { default as ProfileInformation } from "./ProfileInformation/ProfileInformation";

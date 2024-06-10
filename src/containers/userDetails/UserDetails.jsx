@@ -6,6 +6,7 @@ import axios from "axios";
 
 function UserDetails() {
   const [userinfo, setUserinfo] = useState(null);
+  const [reservationInfo, setReservationInfo] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,7 +34,34 @@ function UserDetails() {
     };
 
     fetchUser();
-  }, []);
+  }, [navigate]);
+
+  useEffect(() => {
+    if (userinfo) {
+      const fetchReservations = async () => {
+        try {
+          const token = localStorage.getItem("token");
+          if (!token) {
+            navigate("/login");
+            return;
+          }
+          const response = await axios.get(
+            `http://localhost:8080/api/reservation/getAllForUser/${userinfo.id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          setReservationInfo(response.data);
+        } catch (error) {
+          console.error("Error fetching reservation data:", error);
+        }
+      };
+
+      fetchReservations();
+    }
+  }, [userinfo, navigate]);
 
   if (!userinfo) {
     return <div>Loading...</div>;
@@ -42,7 +70,7 @@ function UserDetails() {
   return (
     <div className="user_details">
       <UserInformation user={userinfo} />
-      <UserReservationHistory />
+      <UserReservationHistory reservationInfo={reservationInfo} />
     </div>
   );
 }

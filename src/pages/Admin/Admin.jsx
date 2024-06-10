@@ -31,6 +31,8 @@ function Admin() {
     currentMode,
     setCurrentColor,
     setCurrentMode,
+    setColor,
+    setMode,
   } = useStateContext();
 
   useEffect(() => {
@@ -39,6 +41,9 @@ function Admin() {
     if (currentThemeColor && currentThemeMode) {
       setCurrentColor(currentThemeColor);
       setCurrentMode(currentThemeMode);
+    } else {
+      setColor({ currentColor });
+      setMode({ currentThemeMode });
     }
   }, []);
 
@@ -81,7 +86,7 @@ function Admin() {
               <Route path="/" element={<Ecommerce />} />
               <Route path="/ecommerce" element={<Ecommerce />} />
 
-              <Route path="/zamówienia" element={<Orders />} />
+              <Route path="/rezerwacje" element={<Orders />} />
               <Route path="/instruktorzy" element={<Employees />} />
               <Route path="/klienci" element={<Customers />} />
 
