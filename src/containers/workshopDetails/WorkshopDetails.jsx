@@ -164,7 +164,11 @@ function WorkshopDetails({ workshop }) {
     <div className="workshopDetails section__margin">
       <div className="workshopDetails__description">
         <img
-          src={mainImage}
+          src={
+            workshop.photos
+              ? `data:image/jpeg;base64,${workshop.photos[0].imageData}`
+              : mainImage
+          }
           alt="Main Workshop"
           className="workshopDetails__mainImage border__radius"
         />

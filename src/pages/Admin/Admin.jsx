@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import "./admin.css";
@@ -21,8 +21,13 @@ import {
   ColorMapping,
 } from "./page";
 import { useStateContext } from "../../contexts/ContextProvider";
+import Workshops from "./page/Workshops";
+import WorkshopForm from "./page/WorkshopForm";
+import EmployeeForm from "./page/EmployeeForm";
+import axios from "axios";
 
 function Admin() {
+  const navigate = useNavigate();
   const {
     activeMenu,
     themeSettings,
@@ -33,6 +38,8 @@ function Admin() {
     setCurrentMode,
     setColor,
     setMode,
+    userInfo,
+    setUserInfo,
   } = useStateContext();
 
   useEffect(() => {
@@ -45,7 +52,37 @@ function Admin() {
       setColor({ currentColor });
       setMode({ currentThemeMode });
     }
+    if (!userInfo) {
+      fetchUserData();
+    }
   }, []);
+
+  const fetchUserData = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        navigate("/login");
+        return;
+      }
+
+      const response = await axios.get("http://localhost:8080/api/user/info", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log(response.data);
+
+      setUserInfo({
+        name: response.data.name,
+        lastname: response.data.lastname,
+        email: response.data.email,
+        photo: response.data.photo,
+      });
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+      navigate("/login");
+    }
+  };
 
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
@@ -86,9 +123,16 @@ function Admin() {
               <Route path="/" element={<Ecommerce />} />
               <Route path="/ecommerce" element={<Ecommerce />} />
 
+              <Route path="/warsztaty" element={<Workshops />} />
               <Route path="/rezerwacje" element={<Orders />} />
               <Route path="/instruktorzy" element={<Employees />} />
               <Route path="/klienci" element={<Customers />} />
+
+              <Route path="warsztaty/add-workshop" element={<WorkshopForm />} />
+              <Route
+                path="instruktorzy/add-employee"
+                element={<EmployeeForm />}
+              />
 
               <Route path="/kanban" element={<Kanban />} />
               <Route path="/kalendarz" element={<Calendar />} />

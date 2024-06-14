@@ -122,7 +122,7 @@ function RezervationModal({ workshop, onClose, userId }) {
 
               <div className="workshopPlace_container">
                 <label htmlFor="workshopArea">
-                  Dokładny ares Państwa placówki:
+                  Dokładny adres Państwa placówki:
                 </label>
                 <textarea
                   type="text"

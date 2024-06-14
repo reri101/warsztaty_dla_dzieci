@@ -36,6 +36,7 @@ function Navbar() {
     screenSize,
     setScreenSize,
     currentColor,
+    userInfo,
   } = useStateContext();
   const userProfileRef = useRef(null);
 
@@ -58,7 +59,10 @@ function Navbar() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (userProfileRef.current && !userProfileRef.current.contains(event.target)) {
+      if (
+        userProfileRef.current &&
+        !userProfileRef.current.contains(event.target)
+      ) {
         setIsClicked({ ...isClicked, userProfile: false });
       }
     };
@@ -108,7 +112,7 @@ function Navbar() {
                 Cześć ,
               </span>
               <span className="text-gray-400 font-bold ml-1 text-bold ml-1 text-14">
-                Małgorzata
+                {userInfo && userInfo.name}
               </span>
             </p>
             <MdKeyboardArrowDown className="text-gray-400 text-14" />

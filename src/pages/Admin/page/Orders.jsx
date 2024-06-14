@@ -38,6 +38,7 @@ const Orders = () => {
           navigate("/login");
           return;
         }
+        console.log(token);
         const response = await axios.get(
           "http://localhost:8080/api/reservation/getAll",
           {
@@ -46,6 +47,7 @@ const Orders = () => {
             },
           }
         );
+        console.log(response.data);
         const transformedData = response.data.map((order, index) => ({
           OrderID: order.id,
           CustomerEmail: `${order.userEmail}`,
@@ -55,14 +57,16 @@ const Orders = () => {
           Location: `${order.place}`,
           Status: `${order.status}`,
           StatusBg: order.status !== "inprogres" ? "#8BE78B" : "#FB9678",
-          ProductImage: img,
+          ProductImage: order.mainPhoto
+            ? `data:image/jpeg;base64,${order.mainPhoto}`
+            : img,
         }));
 
         setOrdersinfo(transformedData);
       } catch (error) {
         console.error("Error fetching user data:", error);
-        localStorage.removeItem("token");
-        navigate("/login");
+        // localStorage.removeItem("token");
+        // navigate("/login");
       }
     };
 

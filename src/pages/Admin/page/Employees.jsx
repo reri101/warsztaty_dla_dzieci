@@ -46,9 +46,11 @@ function Employees() {
         );
 
         const transformedData = response.data.map((employee, index) => ({
-          EmployeeID: 1 + index,
+          EmployeeID: employee.id,
           Name: `${employee.firstName} ${employee.lastName}`,
-          EmployeeImage: avatar,
+          EmployeeImage: employee.photo
+            ? `data:image/jpeg;base64,${employee.photo}`
+            : avatar,
           Email: employee.email,
           Description: `${employee.description}`,
           Status: employee.enabled ? "Active" : "Inactive",
@@ -98,9 +100,18 @@ function Employees() {
     }
   };
 
+  const handleAddEmployee = () => {
+    navigate("add-employee");
+  };
+
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category="Page" title="Employees" />
+      <Header
+        category="Page"
+        title="Employees"
+        buttonText="Dodaj instruktora"
+        buttonOnClick={handleAddEmployee}
+      />
       <GridComponent
         id="gridcomp"
         width="auto"

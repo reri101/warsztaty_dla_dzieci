@@ -2,10 +2,10 @@ import React from "react";
 import { useStateContext } from "../../contexts/ContextProvider";
 import Button from "./Button";
 import { MdOutlineCancel } from "react-icons/md";
-import avatar from "./data/avatar.jpg";
+import avatar from "./data/avatar2.jpg";
 
 function UserProfile() {
-  const { currentColor } = useStateContext();
+  const { currentColor, userInfo } = useStateContext();
 
   return (
     <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96 drop-shadow-xl">
@@ -29,13 +29,13 @@ function UserProfile() {
         />
         <div>
           <p className="font-semibold text-xl dark:text-gray-200">
-            Małgorzata Kos
+            {userInfo.name} {userInfo.lastname}
           </p>
           <p className="text-gray-500 text-sm dark:text-gray-400">
             Administrator
           </p>
           <p className="text-gray-500 text-sm font-semibold dark:text-gray-400">
-            admin493@creativerex.com
+            {userInfo && userInfo.email}
           </p>
         </div>
       </div>

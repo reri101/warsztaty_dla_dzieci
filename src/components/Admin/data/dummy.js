@@ -5,6 +5,7 @@ import {
   AiOutlineAreaChart,
   AiOutlineBarChart,
   AiOutlineStock,
+  AiFillReconciliation,
 } from "react-icons/ai";
 import {
   FiShoppingBag,
@@ -466,7 +467,6 @@ export const customersGrid = [
 ];
 
 export const employeesGrid = [
-
   { type: "checkbox", width: "50" },
   {
     headerText: "Employee",
@@ -507,7 +507,6 @@ export const employeesGrid = [
     textAlign: "Center",
   },
 
-  
   {
     field: "Status",
     headerText: "Status",
@@ -538,6 +537,10 @@ export const links = [
   {
     title: "Strony",
     links: [
+      {
+        name: "warsztaty",
+        icon: <AiFillReconciliation />,
+      },
       {
         name: "rezerwacje",
         icon: <AiOutlineShoppingCart />,
